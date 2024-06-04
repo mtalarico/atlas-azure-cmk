@@ -1,0 +1,13 @@
+{
+  "vault": {
+    "uri": "http://127.0.0.1:8200",
+    "api_key_path": "mongodbatlas/creds/tf-key"
+  },
+  "atlas": {
+    "project_id": "xxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "azure": {
+    "region": "East US",
+    "prefix": "something-unique"
+  }
+}

@@ -1,10 +1,10 @@
 data "mongodbatlas_roles_org_id" "example_org" {
 }
 
-resource "mongodbatlas_project" "example_cmk_project" {
-  name   = "${var.azure.prefix}-example-cmk-project"
-  org_id = data.mongodbatlas_roles_org_id.example_org.org_id
-}
+# resource "mongodbatlas_project" "example_cmk_project" {
+#   name   = "${var.azure.prefix}-example-cmk-project"
+#   org_id = data.mongodbatlas_roles_org_id.example_org.org_id
+# }
 
 # resource "mongodbatlas_advanced_cluster" "this" {
 #   project_id                  = "618af0d4cf620a3a68d4ea36"
@@ -28,7 +28,7 @@ resource "mongodbatlas_project" "example_cmk_project" {
 # }
 
 resource "mongodbatlas_encryption_at_rest" "example_cmk_ear" {
-  project_id = mongodbatlas_project.example_cmk_project.id
+  project_id = var.atlas.project_id
 
   azure_key_vault_config {
     enabled             = true
